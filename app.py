@@ -1,19 +1,20 @@
 import streamlit as st
-import openai
 import os
 from dotenv import load_dotenv
+from openai import OpenAI
 
+# Load API key
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 st.set_page_config(page_title="AI Summarizer", layout="centered")
-st.title("AI Summarizer & Q&A")
+st.title("🧠 AI Summarizer & Q&A")
 
 paragraph = st.text_area("Paste your paragraph here:", height=200)
 
 if st.button("Summarize"):
     if paragraph.strip():
-        resp = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "Summarize the text clearly."},
@@ -21,12 +22,12 @@ if st.button("Summarize"):
             ]
         )
         st.subheader("Summary")
-        st.write(resp.choices[0].message.content.strip())
+        st.write(response.choices[0].message.content.strip())
 
 question = st.text_input("Ask a question about the paragraph:")
 
 if question and paragraph:
-    resp = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "Answer questions only using the given paragraph."},
@@ -34,4 +35,4 @@ if question and paragraph:
         ]
     )
     st.subheader("Answer")
-    st.write(resp.choices[0].message.content.strip())
+    st.write(response.choices[0].message.content.strip())
