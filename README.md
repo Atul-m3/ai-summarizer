@@ -9,13 +9,14 @@ App Files
 - README.md – this file
 
 
-📖 User Guide
+User Guide
 - Paste a paragraph into the text box
 - Click Summarize to get a short version
 - Type a question about the paragraph
 - Get an AI-generated answer instantly
 
-⚙️ Technologies Used
+
+Technologies Used
 - Python 3.8+
 - Streamlit – for the web interface
 - OpenAI API – for summarization and Q&A
