@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 st.set_page_config(page_title="AI Summarizer", layout="centered")
 st.title("AI Summarizer & Q&A")
