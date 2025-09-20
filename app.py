@@ -5,7 +5,7 @@ from openai import OpenAI
 
 # Load API key
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI()
 
 st.set_page_config(page_title="AI Summarizer", layout="centered")
 st.title("🧠 AI Summarizer & Q&A")
@@ -36,3 +36,4 @@ if question and paragraph:
     )
     st.subheader("Answer")
     st.write(response.choices[0].message.content.strip())
+
