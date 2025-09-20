@@ -1,8 +1,7 @@
 import streamlit as st
-import os
 from openai import OpenAI
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 st.set_page_config(page_title="AI Summarizer", layout="centered")
 st.title("AI Summarizer & Q&A")
@@ -32,4 +31,5 @@ if question and paragraph:
         ]
     )
     st.subheader("Answer")
+
     st.write(response.choices[0].message.content.strip())
