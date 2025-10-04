@@ -5,12 +5,15 @@ Drop any chunk of text into the big text box labeled “Paste your paragraph her
 Step 2: Click “Summarize”
 Once your paragraph is in, hit the Summarize button. The app will send it to OpenAI’s GPT-3.5-turbo and return a clean, concise summary right below.
 Step 3: Ask a Question
-If you’re curious about something in the paragraph, type your question in the “Ask a question about the paragraph” box. The app will answer using only the info from your original text — no outside knowledge.
+If you’re curious about something in the paragraph, type your question in the “Ask a question about the paragraph” box. The app will answer using only the info from your original text.
+
+You may wonder why this is useful. Well, when you go into study mode in any AI it will give u full knowledge about that certain topic which may be out of portion, but this AI
+will stick to what input you gave in and it will absolutely cut the BS. 
 
 What You Can Input
-- Paragraph: Any block of text you want to work with
-- Question (optional): Something specific you want to ask about that text
+Paragraph: Any block of text you want to work with
+Question (optional): Something specific you want to ask about that text
 
 What You’ll Get Back
-- Summary: A short version of your paragraph
-- Answer: A direct response to your question, based only on the paragraph
+Summary: A short version of your paragraph
+Answer: A direct response to your question, based only on the paragraph
