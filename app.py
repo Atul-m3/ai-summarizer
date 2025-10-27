@@ -3,7 +3,7 @@ from openai import OpenAI
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-st.set_page_config(page_title="AI Summarizer", layout="centered")
+st.set_page_config(page_title="AI Summarizer by Atul Kumar Singh", layout="centered")
 st.title("AI Summarizer & Q&A")
 
 paragraph = st.text_area("Paste your paragraph here:", height=200)
@@ -32,3 +32,4 @@ if question and paragraph:
     )
     st.subheader("Answer")
     st.write(response.choices[0].message.content.strip())
+
